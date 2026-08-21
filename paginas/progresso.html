@@ -15,116 +15,232 @@
 
 <body>
 
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
     <aside class="sidebar">
 
         <h1>📚 Meu Estudo</h1>
 
         <nav>
 
-            <a href="../index.html">🏠 Início</a>
+            <a href="../index.html">
+                🏠 Início
+            </a>
 
-            <a href="./tarefas.html">📝 Tarefas</a>
+            <a href="tarefas.html">
+                📝 Tarefas
+            </a>
 
-            <a href="./agenda.html">📅 Agenda</a>
+            <a href="agenda.html">
+                📅 Agenda
+            </a>
 
-            <a href="./cronograma.html">📚 Cronograma</a>
+            <a href="cronograma.html">
+                📚 Cronograma
+            </a>
 
-            <a href="./progresso.html" class="active">📊 Progresso</a>
+            <a href="progresso.html" class="active">
+                📊 Progresso
+            </a>
 
-            <a href="./metas.html">🎯 Metas</a>
+            <a href="metas.html">
+                🎯 Metas
+            </a>
 
-            <a href="./configuracoes.html">⚙️ Configurações</a>
+            <a href="configuracoes.html">
+                ⚙️ Configurações
+            </a>
 
         </nav>
 
     </aside>
 
 
+
+    <!-- =========================
+         CONTEÚDO
+    ========================= -->
+
     <main class="main-content">
+
 
         <header class="topbar">
 
-            <div>
+            <h2>
+                Meu Progresso 📊
+            </h2>
 
-                <h2>Meu Progresso 📊</h2>
-
-                <p>
-                    Acompanhe seu desempenho nos estudos.
-                </p>
-
-            </div>
+            <p>
+                Acompanhe sua evolução nos estudos.
+            </p>
 
         </header>
 
 
+
+        <!-- =========================
+             CARDS
+        ========================= -->
+
         <section class="cards">
 
+
             <div class="card">
 
-                <span>📝</span>
+                <div class="card-icon">
+                    📝
+                </div>
 
                 <div>
 
-                    <h3>0</h3>
+                    <h3 id="totalTarefas">
+                        0
+                    </h3>
 
-                    <p>Tarefas concluídas</p>
+                    <p>
+                        Total de tarefas
+                    </p>
 
                 </div>
 
             </div>
 
 
+
             <div class="card">
 
-                <span>⏱️</span>
+                <div class="card-icon">
+                    ✅
+                </div>
 
                 <div>
 
-                    <h3>0h</h3>
+                    <h3 id="tarefasConcluidas">
+                        0
+                    </h3>
 
-                    <p>Horas estudadas</p>
+                    <p>
+                        Tarefas concluídas
+                    </p>
 
                 </div>
 
             </div>
 
 
+
             <div class="card">
 
-                <span>🎯</span>
+                <div class="card-icon">
+                    📊
+                </div>
 
                 <div>
 
-                    <h3>0%</h3>
+                    <h3 id="porcentagem">
+                        0%
+                    </h3>
 
-                    <p>Metas concluídas</p>
+                    <p>
+                        Progresso geral
+                    </p>
 
                 </div>
 
             </div>
+
 
         </section>
 
+
+
+        <!-- =========================
+             BARRA DE PROGRESSO
+        ========================= -->
 
         <section class="panel">
 
-            <h2>Seu desempenho</h2>
+            <div class="panel-header">
 
-            <div class="empty">
+                <div>
 
-                <p>
-                    Ainda não existem dados suficientes.
-                </p>
+                    <h2>
+                        Seu progresso
+                    </h2>
 
-                <span>
-                    Conforme você estudar, seu progresso aparecerá aqui.
-                </span>
+                    <p>
+                        Veja quanto das suas tarefas já foi concluído.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+
+            <p
+                id="textoProgresso"
+                class="progress-text"
+            >
+                Você ainda não concluiu nenhuma tarefa.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             RESUMO
+        ========================= -->
+
+        <section class="panel">
+
+            <h2>
+                Resumo dos estudos
+            </h2>
+
+            <div
+                id="resumoEstudos"
+                class="study-summary"
+            >
+
+                <div class="empty">
+
+                    <p>
+                        Ainda não há dados suficientes.
+                    </p>
+
+                    <span>
+                        Comece adicionando e concluindo tarefas.
+                    </span>
+
+                </div>
 
             </div>
 
         </section>
 
+
     </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script src="../js/progresso.js"></script>
 
