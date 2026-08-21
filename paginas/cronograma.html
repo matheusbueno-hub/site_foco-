@@ -9,11 +9,16 @@
 
     <title>Cronograma - Meu Estudo</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
 
     <aside class="sidebar">
 
@@ -21,64 +26,317 @@
 
         <nav>
 
-            <a href="index.html">🏠 Início</a>
-            <a href="tarefas.html">📝 Tarefas</a>
-            <a href="agenda.html">📅 Agenda</a>
-            <a href="cronograma.html" class="active">📚 Cronograma</a>
-            <a href="progresso.html">📊 Progresso</a>
-            <a href="metas.html">🎯 Metas</a>
-            <a href="configuracoes.html">⚙️ Configurações</a>
+            <a href="../index.html">
+                🏠 Início
+            </a>
+
+            <a href="tarefas.html">
+                📝 Tarefas
+            </a>
+
+            <a href="agenda.html">
+                📅 Agenda
+            </a>
+
+            <a href="cronograma.html" class="active">
+                📚 Cronograma
+            </a>
+
+            <a href="progresso.html">
+                📊 Progresso
+            </a>
+
+            <a href="metas.html">
+                🎯 Metas
+            </a>
+
+            <a href="configuracoes.html">
+                ⚙️ Configurações
+            </a>
 
         </nav>
 
     </aside>
 
 
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
     <main class="main-content">
+
+
+        <!-- CABEÇALHO -->
 
         <header class="topbar">
 
-            <div>
+            <h2>
+                Meu Cronograma 📚
+            </h2>
 
-                <h2>Meu Cronograma 📚</h2>
-
-                <p>
-                    Organize seus horários de estudo.
-                </p>
-
-            </div>
+            <p>
+                Organize seus horários de estudo durante a semana.
+            </p>
 
         </header>
 
 
+
+        <!-- =================================================
+             CRONOGRAMA
+        ================================================== -->
+
         <section class="panel">
+
 
             <div class="panel-header">
 
-                <h2>Horários de estudo</h2>
+                <div>
 
-                <button>
+                    <h2>
+                        Horários de estudo
+                    </h2>
+
+                    <p>
+                        Organize suas matérias por dia e horário.
+                    </p>
+
+                </div>
+
+
+                <button id="btnAdicionarHorario">
                     + Adicionar horário
                 </button>
 
             </div>
 
 
-            <div class="empty">
 
-                <p>
-                    Nenhum horário cadastrado.
-                </p>
+            <!-- TABELA -->
 
-                <span>
-                    Crie seu cronograma de estudos.
-                </span>
+            <div class="schedule-container">
+
+                <table class="schedule">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Horário
+                            </th>
+
+                            <th>
+                                Segunda
+                            </th>
+
+                            <th>
+                                Terça
+                            </th>
+
+                            <th>
+                                Quarta
+                            </th>
+
+                            <th>
+                                Quinta
+                            </th>
+
+                            <th>
+                                Sexta
+                            </th>
+
+                            <th>
+                                Sábado
+                            </th>
+
+                            <th>
+                                Domingo
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="scheduleBody">
+
+                        <!--
+                            O JavaScript vai colocar
+                            os horários aqui.
+                        -->
+
+                    </tbody>
+
+                </table>
 
             </div>
 
+
         </section>
 
+
     </main>
+
+
+
+    <!-- =====================================================
+         MODAL
+    ====================================================== -->
+
+    <div
+        id="modalHorario"
+        class="modal"
+    >
+
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h2>
+                    Novo horário
+                </h2>
+
+
+                <button
+                    id="fecharHorario"
+                    type="button"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="formHorario">
+
+
+                <!-- DIA -->
+
+                <label for="diaSemana">
+                    Dia da semana
+                </label>
+
+
+                <select
+                    id="diaSemana"
+                    required
+                >
+
+                    <option value="">
+                        Escolha o dia
+                    </option>
+
+                    <option value="segunda">
+                        Segunda-feira
+                    </option>
+
+                    <option value="terca">
+                        Terça-feira
+                    </option>
+
+                    <option value="quarta">
+                        Quarta-feira
+                    </option>
+
+                    <option value="quinta">
+                        Quinta-feira
+                    </option>
+
+                    <option value="sexta">
+                        Sexta-feira
+                    </option>
+
+                    <option value="sabado">
+                        Sábado
+                    </option>
+
+                    <option value="domingo">
+                        Domingo
+                    </option>
+
+                </select>
+
+
+
+                <!-- HORÁRIO -->
+
+                <label for="horarioEstudo">
+                    Horário
+                </label>
+
+
+                <input
+                    type="time"
+                    id="horarioEstudo"
+                    required
+                >
+
+
+
+                <!-- MATÉRIA -->
+
+                <label for="materiaEstudo">
+                    Matéria
+                </label>
+
+
+                <input
+                    type="text"
+                    id="materiaEstudo"
+                    placeholder="Ex: Matemática"
+                    required
+                >
+
+
+
+                <!-- DESCRIÇÃO -->
+
+                <label for="descricaoEstudo">
+                    O que estudar?
+                </label>
+
+
+                <textarea
+                    id="descricaoEstudo"
+                    rows="4"
+                    placeholder="Ex: Fazer exercícios da página 25"
+                ></textarea>
+
+
+
+                <!-- SALVAR -->
+
+                <button
+                    type="submit"
+                    class="btn-salvar"
+                >
+                    Salvar horário
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/cronograma.js"></script>
+
 
 </body>
 

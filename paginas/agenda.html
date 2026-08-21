@@ -9,11 +9,17 @@
 
     <title>Agenda - Meu Estudo</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
+
 <body>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
 
     <aside class="sidebar">
 
@@ -21,70 +27,355 @@
 
         <nav>
 
-            <a href="index.html">🏠 Início</a>
+            <a href="../index.html">
+                🏠 Início
+            </a>
 
-            <a href="tarefas.html">📝 Tarefas</a>
+            <a href="tarefas.html">
+                📝 Tarefas
+            </a>
 
-            <a href="agenda.html" class="active">📅 Agenda</a>
+            <a href="agenda.html" class="active">
+                📅 Agenda
+            </a>
 
-            <a href="cronograma.html">📚 Cronograma</a>
+            <a href="cronograma.html">
+                📚 Cronograma
+            </a>
 
-            <a href="progresso.html">📊 Progresso</a>
+            <a href="progresso.html">
+                📊 Progresso
+            </a>
 
-            <a href="metas.html">🎯 Metas</a>
+            <a href="metas.html">
+                🎯 Metas
+            </a>
 
-            <a href="configuracoes.html">⚙️ Configurações</a>
+            <a href="configuracoes.html">
+                ⚙️ Configurações
+            </a>
 
         </nav>
 
     </aside>
 
 
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
     <main class="main-content">
+
+
+        <!-- CABEÇALHO -->
 
         <header class="topbar">
 
-            <div>
+            <h2>
+                Minha Agenda 📅
+            </h2>
 
-                <h2>Minha Agenda 📅</h2>
-
-                <p>
-                    Organize suas provas, trabalhos e atividades.
-                </p>
-
-            </div>
+            <p>
+                Organize suas provas, trabalhos,
+                atividades e lembretes.
+            </p>
 
         </header>
 
 
+
+        <!-- =================================================
+             CALENDÁRIO
+        ================================================== -->
+
         <section class="panel">
 
-            <div class="panel-header">
 
-                <h2>Eventos</h2>
+            <div class="calendar-header">
 
-                <button>
-                    + Adicionar evento
+
+                <button id="mesAnterior">
+                    ‹
                 </button>
 
+
+                <h2 id="mesAtual">
+                    Agosto 2026
+                </h2>
+
+
+                <button id="proximoMes">
+                    ›
+                </button>
+
+
             </div>
 
 
-            <div class="empty">
 
-                <p>
-                    Nenhum evento cadastrado.
-                </p>
+            <button
+                id="btnHoje"
+                class="today-button"
+            >
+                Hoje
+            </button>
 
-                <span>
-                    Sua agenda aparecerá aqui.
-                </span>
+
+
+            <!-- DIAS DA SEMANA -->
+
+            <div class="calendar-week">
+
+                <div>Dom</div>
+
+                <div>Seg</div>
+
+                <div>Ter</div>
+
+                <div>Qua</div>
+
+                <div>Qui</div>
+
+                <div>Sex</div>
+
+                <div>Sáb</div>
 
             </div>
+
+
+
+            <!-- DIAS DO CALENDÁRIO -->
+
+            <div
+                id="calendar"
+                class="calendar"
+            ></div>
+
 
         </section>
 
+
+
+        <!-- =================================================
+             LEMBRETES
+        ================================================== -->
+
+        <section class="panel">
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <h2 id="tituloEventos">
+                        Lembretes
+                    </h2>
+
+                    <p>
+                        Eventos do dia selecionado.
+                    </p>
+
+                </div>
+
+
+
+                <button id="btnAdicionarEvento">
+                    + Novo lembrete
+                </button>
+
+
+            </div>
+
+
+
+            <!-- LISTA DE EVENTOS -->
+
+            <div
+                id="eventList"
+                class="task-list"
+            ></div>
+
+
+        </section>
+
+
     </main>
+
+
+
+    <!-- =====================================================
+         JANELA DE NOVO LEMBRETE
+    ====================================================== -->
+
+    <div
+        id="modalEvento"
+        class="modal"
+    >
+
+
+        <div class="modal-content">
+
+
+            <!-- CABEÇALHO DO MODAL -->
+
+            <div class="modal-header">
+
+
+                <h2>
+                    Novo lembrete
+                </h2>
+
+
+                <button
+                    id="fecharEvento"
+                    type="button"
+                >
+                    ✕
+                </button>
+
+
+            </div>
+
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="formEvento">
+
+
+                <!-- NOME -->
+
+                <label for="nomeEvento">
+                    Nome do lembrete
+                </label>
+
+
+                <input
+                    type="text"
+                    id="nomeEvento"
+                    placeholder="Ex: Prova de Matemática"
+                    required
+                >
+
+
+
+                <!-- TIPO -->
+
+                <label for="tipoEvento">
+                    Tipo
+                </label>
+
+
+                <select
+                    id="tipoEvento"
+                    required
+                >
+
+                    <option value="">
+                        Escolha um tipo
+                    </option>
+
+
+                    <option value="Prova">
+                        📝 Prova
+                    </option>
+
+
+                    <option value="Trabalho">
+                        📚 Trabalho
+                    </option>
+
+
+                    <option value="Atividade">
+                        📖 Atividade
+                    </option>
+
+
+                    <option value="Estudo">
+                        ⏰ Estudar
+                    </option>
+
+
+                    <option value="Lembrete">
+                        🔔 Lembrete
+                    </option>
+
+                </select>
+
+
+
+                <!-- DATA -->
+
+                <label for="dataEvento">
+                    Data
+                </label>
+
+
+                <input
+                    type="date"
+                    id="dataEvento"
+                    required
+                >
+
+
+
+                <!-- HORÁRIO -->
+
+                <label for="horaEvento">
+                    Horário
+                </label>
+
+
+                <input
+                    type="time"
+                    id="horaEvento"
+                >
+
+
+
+                <!-- DESCRIÇÃO -->
+
+                <label for="descricaoEvento">
+                    Descrição
+                </label>
+
+
+                <textarea
+                    id="descricaoEvento"
+                    rows="4"
+                    placeholder="Escreva alguma informação..."
+                ></textarea>
+
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="btn-salvar"
+                >
+                    Salvar lembrete
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/agenda.js"></script>
+
 
 </body>
 
