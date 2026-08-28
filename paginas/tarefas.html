@@ -1,92 +1,314 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tarefas - Meu Estudo</title>
+```
+<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="../css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarefas - Meu Estudo</title>
+
+<!-- Importa o CSS principal do projeto -->
+<link rel="stylesheet" href="../css/style.css">
+```
+
 </head>
 
 <body>
 
-    <aside class="sidebar">
+```
+<!-- =====================================================
+     MENU
+====================================================== -->
 
-        <h1>📚 Meu Estudo</h1>
+<aside class="sidebar">
 
-        <nav>
+    <h1>📚 Meu Estudo</h1>
 
-            <a href="../index.html">🏠 Início</a>
+    <nav>
 
-            <a href="./tarefas.html" class="active">📝 Tarefas</a>
+        <a href="../index.html">
+            🏠 Início
+        </a>
 
-            <a href="./agenda.html">📅 Agenda</a>
+        <a href="./tarefas.html" class="active">
+            📝 Tarefas
+        </a>
 
-            <a href="./cronograma.html">📚 Cronograma</a>
+        <a href="./agenda.html">
+            📅 Agenda
+        </a>
 
-            <a href="./progresso.html">📊 Progresso</a>
+        <a href="./cronograma.html">
+            📚 Cronograma
+        </a>
 
-            <a href="./metas.html">🎯 Metas</a>
+        <a href="./progresso.html">
+            📊 Progresso
+        </a>
 
-            <a href="./configuracoes.html">⚙️ Configurações</a>
+        <a href="./metas.html">
+            🎯 Metas
+        </a>
 
-        </nav>
+        <a href="./configuracoes.html">
+            ⚙️ Configurações
+        </a>
 
-    </aside>
+    </nav>
+
+</aside>
 
 
-    <main class="main-content">
 
-        <header class="topbar">
+<!-- =====================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
+
+<main class="main-content">
+
+
+    <!-- Cabeçalho da página -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h2>
+                Minhas Tarefas 📝
+            </h2>
+
+            <p>
+                Veja e organize todas as suas tarefas.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         PAINEL DE TAREFAS
+    ================================================== -->
+
+    <section class="panel">
+
+
+        <div class="panel-header">
 
             <div>
 
-                <h2>Minhas Tarefas 📝</h2>
+                <h2>
+                    Tarefas
+                </h2>
 
                 <p>
-                    Veja e organize todas as suas tarefas.
+                    Adicione provas, trabalhos e atividades.
                 </p>
 
             </div>
 
-        </header>
+
+            <!--
+                IMPORTANTE:
+
+                O ID "btnAdicionar" é o mesmo
+                que o JavaScript procura.
+            -->
+
+            <button id="btnAdicionar">
+                + Adicionar
+            </button>
+
+        </div>
 
 
-        <section class="panel">
 
-            <div class="panel-header">
+        <!--
+            Aqui o JavaScript vai colocar
+            as tarefas cadastradas.
+        -->
 
-                <h2>Tarefas</h2>
+        <div
+            id="taskList"
+            class="task-list"
+        >
 
-                <button id="btnAdicionar">
-                    + Adicionar
-                </button>
+            <div class="empty">
+
+                <p>
+                    Você ainda não possui tarefas.
+                </p>
+
+                <span>
+                    Adicione uma tarefa para começar.
+                </span>
 
             </div>
 
-
-            <div id="taskList" class="task-list">
-
-                <div class="empty">
-
-                    <p>Você ainda não possui tarefas.</p>
-
-                    <span>
-                        Adicione uma tarefa para começar.
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
+        </div>
 
 
-    <script src="../js/tarefas.js"></script>
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     MODAL PARA ADICIONAR TAREFA
+====================================================== -->
+
+<div
+    id="modalTarefa"
+    class="modal"
+>
+
+
+    <div class="modal-content">
+
+
+        <!-- Cabeçalho do modal -->
+
+        <div class="modal-header">
+
+            <h2>
+                Nova tarefa
+            </h2>
+
+
+            <!-- Botão para fechar -->
+
+            <button
+                id="fecharTarefa"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <form id="formTarefa">
+
+
+            <!-- Nome da tarefa -->
+
+            <label for="nomeTarefa">
+                Nome da tarefa
+            </label>
+
+            <input
+                type="text"
+                id="nomeTarefa"
+                placeholder="Ex: Trabalho de Matemática"
+                required
+            >
+
+
+
+            <!-- Matéria -->
+
+            <label for="materiaTarefa">
+                Matéria
+            </label>
+
+            <input
+                type="text"
+                id="materiaTarefa"
+                placeholder="Ex: Matemática"
+                required
+            >
+
+
+
+            <!-- Data -->
+
+            <label for="dataTarefa">
+                Data de entrega
+            </label>
+
+            <input
+                type="date"
+                id="dataTarefa"
+                required
+            >
+
+
+
+            <!-- Prioridade -->
+
+            <label for="prioridadeTarefa">
+                Prioridade
+            </label>
+
+            <select
+                id="prioridadeTarefa"
+                required
+            >
+
+                <option value="">
+                    Escolha a prioridade
+                </option>
+
+                <option value="Baixa">
+                    🟢 Baixa
+                </option>
+
+                <option value="Média">
+                    🟡 Média
+                </option>
+
+                <option value="Alta">
+                    🔴 Alta
+                </option>
+
+            </select>
+
+
+
+            <!-- Botão salvar -->
+
+            <button
+                type="submit"
+                class="btn-salvar"
+            >
+                Salvar tarefa
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<!--
+    Como tarefas.html está dentro da pasta "paginas",
+    precisamos voltar uma pasta com "../"
+    para chegar na pasta "js".
+-->
+
+<script src="../js/tarefas.js"></script>
+```
 
 </body>
 
