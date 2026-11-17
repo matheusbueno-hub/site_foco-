@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar conta | Foco+</title>
+    
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/cadastro.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/cadastro.js" defer></script>
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <img src="../logo-site.png" alt="Logo Foco+" class="logo">
+
+            <h1>Crie sua conta</h1>
+
+            <p>Comece a organizar seus estudos com o Foco+.</p>
+
+            <form id="cadastroForm">
+
+                <label for="nome">Nome completo</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="password">Senha</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Crie uma senha"
+                    minlength="6"
+                    required
+                >
+
+                <label for="confirmPassword">Confirmar senha</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Digite a senha novamente"
+                    minlength="6"
+                    required
+                >
+
+                <p id="cadastroMessage" role="status" aria-live="polite"></p>
+
+                <button type="submit" id="cadastroButton">
+                    Criar minha conta
+                </button>
+
+            </form>
+
+            <p>
+                Já tem uma conta?
+                <a href="../index.html">Fazer login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

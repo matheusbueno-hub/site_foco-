@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cronograma - Meu Estudo</title>
+    <title>Cronograma - Foco+</title>
 
     <link rel="stylesheet" href="../css/style.css">
 
@@ -15,60 +15,14 @@
 
 <body>
 
-
-    <!-- =====================================================
-         MENU
-    ====================================================== -->
-
-    <aside class="sidebar">
-
-        <h1>📚 Meu Estudo</h1>
-
-        <nav>
-
-            <a href="../index.html">
-                🏠 Início
-            </a>
-
-            <a href="tarefas.html">
-                📝 Tarefas
-            </a>
-
-            <a href="agenda.html">
-                📅 Agenda
-            </a>
-
-            <a href="cronograma.html" class="active">
-                📚 Cronograma
-            </a>
-
-            <a href="progresso.html">
-                📊 Progresso
-            </a>
-
-            <a href="metas.html">
-                🎯 Metas
-            </a>
-
-            <a href="configuracoes.html">
-                ⚙️ Configurações
-            </a>
-
-        </nav>
-
-    </aside>
+    <!-- MENU COMPARTILHADO -->
+    <div id="menu-container"></div>
 
 
-
-    <!-- =====================================================
-         CONTEÚDO
-    ====================================================== -->
-
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
 
-
         <!-- CABEÇALHO -->
-
         <header class="topbar">
 
             <h2>
@@ -82,13 +36,8 @@
         </header>
 
 
-
-        <!-- =================================================
-             CRONOGRAMA
-        ================================================== -->
-
+        <!-- CRONOGRAMA -->
         <section class="panel">
-
 
             <div class="panel-header">
 
@@ -104,7 +53,6 @@
 
                 </div>
 
-
                 <button id="btnAdicionarHorario">
                     + Adicionar horário
                 </button>
@@ -112,9 +60,7 @@
             </div>
 
 
-
             <!-- TABELA -->
-
             <div class="schedule-container">
 
                 <table class="schedule">
@@ -122,50 +68,21 @@
                     <thead>
 
                         <tr>
-
-                            <th>
-                                Horário
-                            </th>
-
-                            <th>
-                                Segunda
-                            </th>
-
-                            <th>
-                                Terça
-                            </th>
-
-                            <th>
-                                Quarta
-                            </th>
-
-                            <th>
-                                Quinta
-                            </th>
-
-                            <th>
-                                Sexta
-                            </th>
-
-                            <th>
-                                Sábado
-                            </th>
-
-                            <th>
-                                Domingo
-                            </th>
-
+                            <th>Horário</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
                         </tr>
 
                     </thead>
 
-
                     <tbody id="scheduleBody">
 
-                        <!--
-                            O JavaScript vai colocar
-                            os horários aqui.
-                        -->
+                        <!-- O JavaScript vai colocar os horários aqui -->
 
                     </tbody>
 
@@ -173,33 +90,21 @@
 
             </div>
 
-
         </section>
-
 
     </main>
 
 
-
-    <!-- =====================================================
-         MODAL
-    ====================================================== -->
-
-    <div
-        id="modalHorario"
-        class="modal"
-    >
-
+    <!-- MODAL DE NOVO HORÁRIO -->
+    <div id="modalHorario" class="modal">
 
         <div class="modal-content">
-
 
             <div class="modal-header">
 
                 <h2>
                     Novo horário
                 </h2>
-
 
                 <button
                     id="fecharHorario"
@@ -211,23 +116,14 @@
             </div>
 
 
-
             <!-- FORMULÁRIO -->
-
             <form id="formHorario">
-
-
-                <!-- DIA -->
 
                 <label for="diaSemana">
                     Dia da semana
                 </label>
 
-
-                <select
-                    id="diaSemana"
-                    required
-                >
+                <select id="diaSemana" required>
 
                     <option value="">
                         Escolha o dia
@@ -264,13 +160,9 @@
                 </select>
 
 
-
-                <!-- HORÁRIO -->
-
                 <label for="horarioEstudo">
                     Horário
                 </label>
-
 
                 <input
                     type="time"
@@ -279,13 +171,9 @@
                 >
 
 
-
-                <!-- MATÉRIA -->
-
                 <label for="materiaEstudo">
                     Matéria
                 </label>
-
 
                 <input
                     type="text"
@@ -295,13 +183,9 @@
                 >
 
 
-
-                <!-- DESCRIÇÃO -->
-
                 <label for="descricaoEstudo">
                     O que estudar?
                 </label>
-
 
                 <textarea
                     id="descricaoEstudo"
@@ -310,9 +194,6 @@
                 ></textarea>
 
 
-
-                <!-- SALVAR -->
-
                 <button
                     type="submit"
                     class="btn-salvar"
@@ -320,23 +201,16 @@
                     Salvar horário
                 </button>
 
-
             </form>
 
-
         </div>
-
 
     </div>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
+    <!-- JAVASCRIPT -->
+    <script src="../js/menu.js" defer></script>
     <script src="../js/cronograma.js"></script>
-
 
 </body>
 

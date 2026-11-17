@@ -1,250 +1,135 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meu Estudo</title>
+    <title>Meu Estudo | Foco+</title>
 
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-
-    <!-- MENU LATERAL -->
-
-    <aside class="sidebar">
-
-        <h1>📚 Meu Estudo</h1>
-
-        <nav>
-
-            <a href="index.html" class="active">
-                🏠 Início
-            </a>
-
-            <a href="paginas/tarefas.html">
-                📝 Tarefas
-            </a>
-
-            <a href="paginas/agenda.html">
-                📅 Agenda
-            </a>
-
-            <a href="paginas/cronograma.html">
-                📚 Cronograma
-            </a>
-
-            <a href="paginas/progresso.html">
-                📊 Progresso
-            </a>
-
-            <a href="paginas/metas.html">
-                🎯 Metas
-            </a>
-
-            <a href="paginas/configuracoes.html">
-                ⚙️ Configurações
-            </a>
-
-        </nav>
-
-    </aside>
-
-
+    <!-- MENU COMPARTILHADO -->
+    <div id="menu-container"></div>
 
     <!-- CONTEÚDO -->
-
     <main class="main-content">
-
 
         <header class="topbar">
 
             <div>
-
                 <h2>Olá! 👋</h2>
 
                 <p>
                     Organize seus estudos e acompanhe seu progresso.
                 </p>
-
             </div>
 
         </header>
 
-
-
         <!-- CARDS -->
-
         <section class="cards">
 
-
             <div class="card">
-
-                <div class="card-icon">
-                    📝
-                </div>
+                <div class="card-icon">📝</div>
 
                 <div>
-
-                    <h3 id="totalTarefas">
-                        0
-                    </h3>
-
-                    <p>
-                        Tarefas
-                    </p>
-
+                    <h3 id="totalTarefas">0</h3>
+                    <p>Tarefas</p>
                 </div>
-
             </div>
-
-
 
             <div class="card">
-
-                <div class="card-icon">
-                    📅
-                </div>
+                <div class="card-icon">📅</div>
 
                 <div>
-
-                    <h3 id="totalEventos">
-                        0
-                    </h3>
-
-                    <p>
-                        Eventos
-                    </p>
-
+                    <h3 id="totalEventos">0</h3>
+                    <p>Eventos</p>
                 </div>
-
             </div>
-
-
 
             <div class="card">
-
-                <div class="card-icon">
-                    🎯
-                </div>
+                <div class="card-icon">🎯</div>
 
                 <div>
-
-                    <h3 id="totalMetas">
-                        0
-                    </h3>
-
-                    <p>
-                        Metas
-                    </p>
-
+                    <h3 id="totalMetas">0</h3>
+                    <p>Metas</p>
                 </div>
-
             </div>
-
 
         </section>
 
-
-
         <!-- TAREFAS -->
-
         <section class="panel">
 
             <div class="panel-header">
 
                 <div>
-
                     <h2>Próximas tarefas</h2>
 
                     <p>
                         Veja o que precisa fazer.
                     </p>
-
                 </div>
 
-                <a
-                    href="paginas/tarefas.html"
-                    class="button"
-                >
+                <a href="tarefas.html" class="button">
                     Ver tarefas
                 </a>
 
             </div>
 
-
             <div id="tarefasInicio">
 
                 <div class="empty">
-
-                    <p>
-                        Nenhuma tarefa cadastrada.
-                    </p>
+                    <p>Nenhuma tarefa cadastrada.</p>
 
                     <span>
                         Adicione uma tarefa para começar.
                     </span>
-
                 </div>
 
             </div>
 
         </section>
 
-
-
         <!-- AGENDA -->
-
         <section class="panel">
 
             <div class="panel-header">
 
                 <div>
-
                     <h2>Próximos eventos</h2>
 
                     <p>
                         Provas, trabalhos e atividades.
                     </p>
-
                 </div>
 
-                <a
-                    href="paginas/agenda.html"
-                    class="button"
-                >
+                <a href="agenda.html" class="button">
                     Ver agenda
                 </a>
 
             </div>
 
-
             <div id="eventosInicio">
 
                 <div class="empty">
-
-                    <p>
-                        Nenhum evento cadastrado.
-                    </p>
-
+                    <p>Nenhum evento cadastrado.</p>
                 </div>
 
             </div>
 
         </section>
 
-
     </main>
 
-
-    <script src="js/script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/script.js"></script>
 
 </body>
-
 </html>

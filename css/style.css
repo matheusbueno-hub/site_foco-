@@ -1481,6 +1481,319 @@ form textarea {
     letter-spacing: 1px;
 }
 
+
+/* =====================================================
+   MENU PRINCIPAL FOCO+
+===================================================== */
+
+.menu-principal {
+    width: 100%;
+    min-height: 78px;
+    padding: 15px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: linear-gradient(110deg, #071735, #102d69, #244de0);
+
+    box-shadow: 0 4px 18px rgba(16, 36, 85, 0.15);
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* LOGOTIPO */
+
+.menu-logo {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.menu-logo:hover {
+    color: #26d6ca;
+    transform: scale(1.05);
+}
+
+/* LINKS DO MENU */
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 14px;
+
+    color: #e5edff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 9px;
+
+    transition: all 0.25s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.menu-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-2px);
+}
+
+/* PÁGINA ATUAL */
+
+.menu-links a.active {
+    color: #071735;
+    background: #26d6ca;
+
+    font-weight: 800;
+
+    box-shadow: 0 4px 12px rgba(38, 214, 202, 0.2);
+}
+
+/* FOCO PELO TECLADO */
+
+.menu-links a:focus-visible,
+.menu-logo:focus-visible {
+    outline: 3px solid #26d6ca;
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   AJUSTE DO CONTEÚDO
+===================================================== */
+
+.main-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 35px;
+}
+
+/* =====================================================
+   MENU EM TABLETS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .menu-principal {
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .menu-links {
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+}
+
+/* =====================================================
+   MENU EM CELULARES
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .menu-principal {
+        padding: 18px 12px;
+        gap: 12px;
+    }
+
+    .menu-logo {
+        font-size: 25px;
+    }
+
+    .menu-links {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .menu-links a {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 18px 12px;
+    }
+
+}
+
+
+/* =========================================
+   METAS - FOCO+
+========================================= */
+
+.metas-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.metas-modal-overlay.mostrar {
+    display: flex;
+}
+
+.metas-modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 30px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.metas-modal h2 {
+    color: #102d69;
+    margin-bottom: 8px;
+}
+
+.metas-modal > p {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.metas-fechar {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.metas-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.metas-modal label {
+    font-weight: 600;
+    color: #334155;
+    margin-top: 8px;
+}
+
+.metas-modal input,
+.metas-modal textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font: inherit;
+}
+
+.metas-modal input:focus,
+.metas-modal textarea:focus {
+    outline: 2px solid #244de0;
+    border-color: #244de0;
+}
+
+.metas-salvar {
+    margin-top: 15px;
+    padding: 13px;
+    background: #244de0;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.metas-salvar:hover {
+    background: #102d69;
+}
+
+/* CARTÕES DAS METAS */
+
+.meta-card {
+    background: #f8faff;
+    border: 1px solid #dce5f5;
+    border-left: 5px solid #244de0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.meta-card h3 {
+    color: #102d69;
+    margin-bottom: 10px;
+}
+
+.meta-card p {
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.meta-status {
+    font-weight: 700;
+}
+
+.meta-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.meta-botoes button {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #244de0;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.meta-botoes .meta-excluir {
+    background: #dc3545;
+}
+
+.meta-botoes button:hover {
+    opacity: 0.85;
+}
+
+
+
 /* =========================================
     RESPONSIVIDADE
 ========================================= */

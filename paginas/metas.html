@@ -1,93 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Metas - Meu Estudo</title>
-
+    <title>Metas - Foco+</title>
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
 <body>
 
-    <aside class="sidebar">
-
-        <h1>📚 Meu Estudo</h1>
-
-        <nav>
-
-            <a href="../index.html">🏠 Início</a>
-
-            <a href="./tarefas.html">📝 Tarefas</a>
-
-            <a href="./agenda.html">📅 Agenda</a>
-
-            <a href="./cronograma.html">📚 Cronograma</a>
-
-            <a href="./progresso.html">📊 Progresso</a>
-
-            <a href="./metas.html" class="active">🎯 Metas</a>
-
-            <a href="./configuracoes.html">⚙️ Configurações</a>
-
-        </nav>
-
-    </aside>
-
+    <div id="menu-container"></div>
 
     <main class="main-content">
 
         <header class="topbar">
-
             <div>
-
                 <h2>Minhas Metas 🎯</h2>
-
-                <p>
-                    Defina objetivos para seus estudos.
-                </p>
-
+                <p>Defina objetivos para seus estudos.</p>
             </div>
-
         </header>
-
 
         <section class="panel">
 
             <div class="panel-header">
-
                 <h2>Metas</h2>
 
-                <button>
+                <button type="button" id="btnAdicionarMeta">
                     + Adicionar meta
                 </button>
-
             </div>
 
-
-            <div class="empty">
-
-                <p>
-                    Você ainda não possui metas.
-                </p>
-
-                <span>
-                    Crie uma meta para começar.
-                </span>
-
+            <div id="listaMetas">
+                <div class="empty">
+                    <p>Você ainda não possui metas.</p>
+                    <span>Crie uma meta para começar.</span>
+                </div>
             </div>
 
         </section>
 
     </main>
 
-    <script src="../js/metas.js"></script>
-    
-</body>
+    <!-- JANELA DE CRIAÇÃO DE META -->
+    <div class="metas-modal-overlay" id="modalMeta">
 
+        <div class="metas-modal">
+
+            <button type="button" class="metas-fechar" id="fecharModalMeta">
+                &times;
+            </button>
+
+            <h2>🎯 Criar nova meta</h2>
+            <p>Defina um objetivo para seus estudos.</p>
+
+            <form id="formMeta">
+
+                <label for="tituloMeta">Nome da meta</label>
+                <input
+                    type="text"
+                    id="tituloMeta"
+                    placeholder="Ex.: Estudar matemática"
+                    required
+                    maxlength="100"
+                >
+
+                <label for="descricaoMeta">Descrição</label>
+                <textarea
+                    id="descricaoMeta"
+                    placeholder="Descreva seu objetivo..."
+                    rows="3"
+                ></textarea>
+
+                <label for="prazoMeta">Prazo para concluir</label>
+                <input type="date" id="prazoMeta">
+
+                <button type="submit" class="metas-salvar">
+                    Salvar meta
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/metas.js" defer></script>
+
+</body>
 </html>

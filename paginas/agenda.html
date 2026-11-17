@@ -1,75 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Agenda - Meu Estudo</title>
+    <title>Agenda - Foco+</title>
 
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
-
 <body>
 
-
-    <!-- =====================================================
-         MENU
-    ====================================================== -->
-
-    <aside class="sidebar">
-
-        <h1>📚 Meu Estudo</h1>
-
-        <nav>
-
-            <a href="../index.html">
-                🏠 Início
-            </a>
-
-            <a href="tarefas.html">
-                📝 Tarefas
-            </a>
-
-            <a href="agenda.html" class="active">
-                📅 Agenda
-            </a>
-
-            <a href="cronograma.html">
-                📚 Cronograma
-            </a>
-
-            <a href="progresso.html">
-                📊 Progresso
-            </a>
-
-            <a href="metas.html">
-                🎯 Metas
-            </a>
-
-            <a href="configuracoes.html">
-                ⚙️ Configurações
-            </a>
-
-        </nav>
-
-    </aside>
+    <!-- MENU COMPARTILHADO -->
+    <div id="menu-container"></div>
 
 
-
-    <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-    ====================================================== -->
-
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
 
-
         <!-- CABEÇALHO -->
-
         <header class="topbar">
 
             <h2>
@@ -84,34 +37,24 @@
         </header>
 
 
-
-        <!-- =================================================
-             CALENDÁRIO
-        ================================================== -->
-
+        <!-- CALENDÁRIO -->
         <section class="panel">
 
-
             <div class="calendar-header">
-
 
                 <button id="mesAnterior">
                     ‹
                 </button>
 
-
                 <h2 id="mesAtual">
                     Agosto 2026
                 </h2>
-
 
                 <button id="proximoMes">
                     ›
                 </button>
 
-
             </div>
-
 
 
             <button
@@ -122,50 +65,33 @@
             </button>
 
 
-
             <!-- DIAS DA SEMANA -->
-
             <div class="calendar-week">
 
                 <div>Dom</div>
-
                 <div>Seg</div>
-
                 <div>Ter</div>
-
                 <div>Qua</div>
-
                 <div>Qui</div>
-
                 <div>Sex</div>
-
                 <div>Sáb</div>
 
             </div>
 
 
-
             <!-- DIAS DO CALENDÁRIO -->
-
             <div
                 id="calendar"
                 class="calendar"
             ></div>
 
-
         </section>
 
 
-
-        <!-- =================================================
-             LEMBRETES
-        ================================================== -->
-
+        <!-- LEMBRETES -->
         <section class="panel">
 
-
             <div class="panel-header">
-
 
                 <div>
 
@@ -179,54 +105,38 @@
 
                 </div>
 
-
-
                 <button id="btnAdicionarEvento">
                     + Novo lembrete
                 </button>
 
-
             </div>
 
 
-
             <!-- LISTA DE EVENTOS -->
-
             <div
                 id="eventList"
                 class="task-list"
             ></div>
 
-
         </section>
-
 
     </main>
 
 
-
-    <!-- =====================================================
-         JANELA DE NOVO LEMBRETE
-    ====================================================== -->
-
+    <!-- MODAL DE NOVO LEMBRETE -->
     <div
         id="modalEvento"
         class="modal"
     >
 
-
         <div class="modal-content">
 
-
             <!-- CABEÇALHO DO MODAL -->
-
             <div class="modal-header">
-
 
                 <h2>
                     Novo lembrete
                 </h2>
-
 
                 <button
                     id="fecharEvento"
@@ -235,22 +145,15 @@
                     ✕
                 </button>
 
-
             </div>
 
 
-
             <!-- FORMULÁRIO -->
-
             <form id="formEvento">
-
-
-                <!-- NOME -->
 
                 <label for="nomeEvento">
                     Nome do lembrete
                 </label>
-
 
                 <input
                     type="text"
@@ -260,13 +163,9 @@
                 >
 
 
-
-                <!-- TIPO -->
-
                 <label for="tipoEvento">
                     Tipo
                 </label>
-
 
                 <select
                     id="tipoEvento"
@@ -277,26 +176,21 @@
                         Escolha um tipo
                     </option>
 
-
                     <option value="Prova">
                         📝 Prova
                     </option>
-
 
                     <option value="Trabalho">
                         📚 Trabalho
                     </option>
 
-
                     <option value="Atividade">
                         📖 Atividade
                     </option>
 
-
                     <option value="Estudo">
                         ⏰ Estudar
                     </option>
-
 
                     <option value="Lembrete">
                         🔔 Lembrete
@@ -305,13 +199,9 @@
                 </select>
 
 
-
-                <!-- DATA -->
-
                 <label for="dataEvento">
                     Data
                 </label>
-
 
                 <input
                     type="date"
@@ -320,13 +210,9 @@
                 >
 
 
-
-                <!-- HORÁRIO -->
-
                 <label for="horaEvento">
                     Horário
                 </label>
-
 
                 <input
                     type="time"
@@ -334,13 +220,9 @@
                 >
 
 
-
-                <!-- DESCRIÇÃO -->
-
                 <label for="descricaoEvento">
                     Descrição
                 </label>
-
 
                 <textarea
                     id="descricaoEvento"
@@ -349,9 +231,6 @@
                 ></textarea>
 
 
-
-                <!-- BOTÃO -->
-
                 <button
                     type="submit"
                     class="btn-salvar"
@@ -359,23 +238,16 @@
                     Salvar lembrete
                 </button>
 
-
             </form>
 
-
         </div>
-
 
     </div>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
+    <!-- JAVASCRIPT -->
+    <script src="../js/menu.js" defer></script>
     <script src="../js/agenda.js"></script>
-
 
 </body>
 
